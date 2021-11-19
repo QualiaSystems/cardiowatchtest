@@ -12,10 +12,11 @@ struct ContentView: View {
     @ObservedObject var cbManager = CBManager()
     
     var body: some View {
-        Text(cbManager.state)
-            .padding().onAppear {
-                
-            }
+        
+        Group {
+            Text(cbManager.state).padding()
+            Text(cbManager.bpm.description).padding()
+        }
     }
 }
 
